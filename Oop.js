@@ -27,17 +27,40 @@
 // console.log(`car:`, car, car._proto_)
 // console.log(`car wheels:`,car.wheels)
 
-function persosn(name,age){
-    this.name = name
-;
-    this.age = age;console.log(`vehicle:`, vehicle, vehicle._proto_)
-    this.sayName = function (){
+// function persosn(name,age){
+//     this.name = name
+// ;
+//     this.age = age;console.log(`vehicle:`, vehicle, vehicle._proto_)
+//     this.sayName = function (){
+//
+//         console.log(this.name);
+//
+//     }
+//
+//     const person = new Person("jumoke",24);
+//     personeOne.sayName()
+//     console.log(person)
+// }
 
-        console.log(this.name);
+// let vehicle = {wheels:4};
+// let car = {
+//     seats :5,
+//     __proto__:vehicle
+// } ;
+//
+// console.log(`car`,car,car.__proto__)
 
+import * as readline from "readline";
+
+function Human(_name, _age){
+    this.name = _name;
+    this.age = _age;
+}
+
+function Employee(_name,_age,_destination){
+    this.destination = _destination;
+    this.setAge = newage =>{
+        console.log(`setting age from ${this.age} to ${newage}`)
+        this.age = newage;
     }
-
-    const person = new Person("jumoke",24);
-    personeOne.sayName()
-    console.log(person)
 }
