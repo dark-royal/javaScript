@@ -33,11 +33,27 @@ bookList.addEventListener('click',(e) => {
     let className = e.target.className
     console.log(className)
 
-    if(Object .is(className, "delete")){
-        let li = e.target.parentElement
-        bookList.removeChild(li)
 
+    if (className === "delete") {
+        let li = e.target.parentNode
+        bookList.removeChild(li)
+        alert("Deleted successfully")
+
+
+}else {
+        alert("oga click button")
     }
+
+})
+
+const searchBook = document.forms["search-books"];
+const listOfBooks = document.querySelectorAll("#book-list li")
+console.log(searchBook)
+console.log(listOfBooks)
+searchBook.addEventListener("keyup",function (e){
+    let inputText = e.target.value.toLowerCase()
+    console.log(inputText)
+    console.log(e)
 })
 
 
