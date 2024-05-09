@@ -47,7 +47,7 @@ bookList.addEventListener('click',(e) => {
 })
 
 const searchBook = document.forms["search-books"];
-const listOfBooks = document.querySelectorAll("#book-list li .name")
+const listOfBooks  = document.querySelectorAll("#book-list li .name")
 console.log(searchBook)
 console.log(listOfBooks)
 searchBook.addEventListener("keyup",function (e){
@@ -68,5 +68,32 @@ searchBook.addEventListener("keyup",function (e){
     })
 
 })
+
+const  addBook = document.forms["add-book"];
+console.log(addBook);
+
+addBook.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const inputValue = addBook.querySelector("input").value
+
+    if(inputValue){
+        const liTag = document.createElement("li")
+        const  firstSpan = document.createElement("span")
+        const secondSpan = document.createElement("span")
+
+        firstSpan.className = "name";
+        secondSpan.className = "delete"
+
+        liTag.appendChild(firstSpan);
+        liTag.appendChild(secondSpan);
+
+        firstSpan.textContent = inputValue;
+        secondSpan.textContent = "delete";
+
+        bookList.prepend(liTag)
+        console.log(bookList)
+    }
+    })
+
 
 
