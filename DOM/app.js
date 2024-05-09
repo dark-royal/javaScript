@@ -47,13 +47,26 @@ bookList.addEventListener('click',(e) => {
 })
 
 const searchBook = document.forms["search-books"];
-const listOfBooks = document.querySelectorAll("#book-list li")
+const listOfBooks = document.querySelectorAll("#book-list li .name")
 console.log(searchBook)
 console.log(listOfBooks)
 searchBook.addEventListener("keyup",function (e){
     let inputText = e.target.value.toLowerCase()
-    console.log(inputText)
-    console.log(e)
+    listOfBooks.forEach((book) =>{
+        let title = book.textContent.toLowerCase()
+        let isIncluded = title.includes(inputText)
+        let parentNode = book.parentNode;
+        console.log(parentNode)
+        if(isIncluded){
+            parentNode.style.display = "block"
+
+        }
+        else{
+            parentNode.style.display = "none";
+        }
+
+    })
+
 })
 
 
